@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 5</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div th:replace="~{fragmentos :: encabezado}"></div>
+<main>
+    <div class="tarjeta">
+        <h2>Punto 5: Método verTotales</h2>
+        <p>El objeto <b th:text="${construccion.nombre}"></b> llamó a <code>verTotales</code> pasándole la función del punto 4.</p>
+        <p><b>Stack conteo:</b> <span th:text="${construccion.conteo}"></span></p>
+        <p>Total de datos enteros: <span class="total" th:text="${total}"></span></p>
+    </div>
+</main>
+<div th:replace="~{fragmentos :: pie}"></div>
+</body>
+</html>

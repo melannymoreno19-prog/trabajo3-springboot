@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 3</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div th:replace="~{fragmentos :: encabezado}"></div>
+<main>
+    <div class="tarjeta">
+        <h2>Punto 3: Programación funcional</h2>
+        <p>Construcciones del proyecto <b th:text="${proyecto.nombre}"></b> filtradas por el tipo
+           <span class="etiqueta" th:text="${tipoBuscado}"></span>
+           (Stack convertido a Deque con <b th:text="${tamanoDeque}"></b> elementos).</p>
+        <div th:replace="~{fragmentos :: tabla(${filtradas})}"></div>
+    </div>
+</main>
+<div th:replace="~{fragmentos :: pie}"></div>
+</body>
+</html>

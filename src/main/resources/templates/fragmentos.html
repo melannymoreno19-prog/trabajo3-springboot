@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragmentos</title>
+</head>
+<body>
+
+<header th:fragment="encabezado">
+    <h1>Trabajo 3 - Construcciones y Proyectos Urbanísticos</h1>
+    <nav>
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/punto1}">Punto 1</a>
+        <a th:href="@{/punto2}">Punto 2</a>
+        <a th:href="@{/punto3}">Punto 3</a>
+        <a th:href="@{/punto4}">Punto 4</a>
+        <a th:href="@{/punto5}">Punto 5</a>
+    </nav>
+</header>
+
+<footer th:fragment="pie">
+    Melanny Moreno Tabares · CES2 · Docente Juan Carlos Gil Vera
+</footer>
+
+<table th:fragment="tabla(lista)">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Área (m²)</th>
+            <th>Costo</th>
+            <th>Tipo</th>
+            <th>Categoría</th>
+            <th>Conteo (obreros por día)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="c : ${lista}">
+            <td th:text="${c.id}"></td>
+            <td th:text="${c.nombre}"></td>
+            <td th:text="${c.direccion}"></td>
+            <td th:text="${c.areaMetros}"></td>
+            <td th:text="${'$ ' + #numbers.formatDecimal(c.costo, 1, 'POINT', 0, 'COMMA')}"></td>
+            <td><span class="etiqueta" th:text="${c.tipo}"></span></td>
+            <td><span class="etiqueta" th:text="${c.categoria}"></span></td>
+            <td th:text="${c.conteo}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

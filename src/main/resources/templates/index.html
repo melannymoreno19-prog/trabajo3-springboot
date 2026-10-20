@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div th:replace="~{fragmentos :: encabezado}"></div>
+<main>
+    <div class="tarjeta">
+        <h2>Construcciones y Proyectos Urbanísticos</h2>
+        <p>Aplicación Spring Boot con Spring Web, Thymeleaf y DevTools. Cada enlace muestra el resultado de un punto del trabajo.</p>
+        <div class="lista-enlaces">
+            <a th:href="@{/punto1}"><b>Punto 1:</b> Enums, clases, Stack de construcciones y Deque del proyecto</a>
+            <a th:href="@{/punto2}"><b>Punto 2:</b> Recorrido con ListIterator e Iterator</a>
+            <a th:href="@{/punto3}"><b>Punto 3:</b> Programación funcional sobre el Deque</a>
+            <a th:href="@{/punto4}"><b>Punto 4:</b> Function&lt;T,R&gt; que suma el Stack conteo</a>
+            <a th:href="@{/punto5}"><b>Punto 5:</b> Método verTotales</a>
+        </div>
+    </div>
+</main>
+<div th:replace="~{fragmentos :: pie}"></div>
+</body>
+</html>

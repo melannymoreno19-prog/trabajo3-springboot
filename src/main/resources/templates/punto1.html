@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 1</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div th:replace="~{fragmentos :: encabezado}"></div>
+<main>
+    <div class="tarjeta">
+        <h2>Punto 1: Objetos creados</h2>
+        <h3>Stack de 5 construcciones</h3>
+        <div th:replace="~{fragmentos :: tabla(${pila})}"></div>
+    </div>
+
+    <div class="tarjeta">
+        <h3 style="margin-top:0">Proyecto urbanístico</h3>
+        <p><b>Id:</b> <span th:text="${proyecto.id}"></span></p>
+        <p><b>Nombre:</b> <span th:text="${proyecto.nombre}"></span></p>
+        <p><b>Ciudad:</b> <span th:text="${proyecto.ciudad}"></span></p>
+        <p><b>Presupuesto:</b> <span th:text="${'$ ' + #numbers.formatDecimal(proyecto.presupuesto, 1, 'POINT', 0, 'COMMA')}"></span></p>
+        <p><b>Tipo:</b> <span class="etiqueta" th:text="${proyecto.tipo}"></span>
+           <b>Categoría:</b> <span class="etiqueta" th:text="${proyecto.categoria}"></span></p>
+
+        <h3>Deque de construcciones del proyecto</h3>
+        <div th:replace="~{fragmentos :: tabla(${proyecto.construcciones})}"></div>
+    </div>
+</main>
+<div th:replace="~{fragmentos :: pie}"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 4</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div th:replace="~{fragmentos :: encabezado}"></div>
+<main>
+    <div class="tarjeta">
+        <h2>Punto 4: Function&lt;Construccion, Integer&gt;</h2>
+        <p>Suma de todos los datos del Stack <code>conteo</code> de cada construcción.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Construcción</th>
+                    <th>Tipo</th>
+                    <th>Categoría</th>
+                    <th>Stack conteo</th>
+                    <th>Total de obreros</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c, fila : ${construcciones}">
+                    <td th:text="${c.nombre}"></td>
+                    <td><span class="etiqueta" th:text="${c.tipo}"></span></td>
+                    <td><span class="etiqueta" th:text="${c.categoria}"></span></td>
+                    <td th:text="${c.conteo}"></td>
+                    <td><b th:text="${totales[fila.index]}"></b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<div th:replace="~{fragmentos :: pie}"></div>
+</body>
+</html>

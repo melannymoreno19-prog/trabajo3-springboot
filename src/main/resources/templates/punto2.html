@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 2</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div th:replace="~{fragmentos :: encabezado}"></div>
+<main>
+    <div class="tarjeta">
+        <h2>Punto 2: Iteradores</h2>
+        <h3>ListIterator sobre el Stack</h3>
+        <div th:replace="~{fragmentos :: tabla(${recorridoPila})}"></div>
+    </div>
+
+    <div class="tarjeta">
+        <h3 style="margin-top:0">Iterator sobre el Deque del proyecto <span th:text="${proyecto.nombre}"></span></h3>
+        <div th:replace="~{fragmentos :: tabla(${recorridoDeque})}"></div>
+    </div>
+</main>
+<div th:replace="~{fragmentos :: pie}"></div>
+</body>
+</html>
